@@ -64,7 +64,7 @@ const Contact = () => {
       try {
         setSending(true);
 
-        const response = await fetch('https://api.mayurpatild.com/message', {
+        const response = await fetch('https://api.mayurpatild.github.io/message', {
           method: 'POST',
           mode: 'cors',
           headers: {
