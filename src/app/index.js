@@ -68,7 +68,7 @@ const AppRoutes = () => {
   return (
     <Fragment>
       <Helmet>
-        <link rel="canonical" href={`https://mayurpatild.github.io/parallax${pathname}`} />
+        <link rel="canonical" href={`https://mayurpatild.github.io/${pathname}`} />
       </Helmet>
       <VisuallyHidden showOnFocus as="a" className="skip-to-main" href="#MainContent">
         Skip to main content
