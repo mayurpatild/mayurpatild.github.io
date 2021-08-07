@@ -1,13 +1,13 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://mayurpatild.com",
+  "homepage": "https://mayurpatild.github.io/portfolio-3js/",
   "description": "Portfolio site for Mayur Patil",
   "repository": "https://github.com/mayurpatild/portfolio.git",
   "author": "Mayur Patil <hello@mayurpatild.com>",
   "devDependencies": {
     "@babel/core": "^7.12.3",
-    "@mayurmw/react-scripts-postcss": "4.0.0-mod1",
+    "@hamishmw/react-scripts-postcss": "4.0.0-mod1",
     "@storybook/addon-a11y": "^6.1.10",
     "@storybook/addon-actions": "^6.1.10",
     "@storybook/addon-controls": "^6.1.10",

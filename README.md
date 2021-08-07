@@ -1,6 +1,6 @@
 # Personal portfolio
 
-[![Site preview](/public/social-image.png)](https://mayurpatild.com)
+[![Site preview](/public/social-image.png)](https://mayurpatild.github.io/portfolio-3js)
 
 A design portfolio to showcase a few projects. View the [live site](https://mayurpatild.com) or check out a live version of the [components storybook](https://storybook.mayurpatild.com).
 
