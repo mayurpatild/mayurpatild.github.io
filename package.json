@@ -1,10 +1,10 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://mayurpatild.github.io/portfolio-3js/",
+  "homepage": "https://mayurpatild.github.io/",
   "description": "Portfolio site for Mayur Patil",
   "repository": "https://github.com/mayurpatild/portfolio.git",
-  "author": "Mayur Patil <hello@mayurpatild.com>",
+  "author": "Mayur Patil <mayurpatild@gmail.com>",
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@hamishmw/react-scripts-postcss": "4.0.0-mod1",

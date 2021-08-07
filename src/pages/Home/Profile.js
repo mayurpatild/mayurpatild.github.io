@@ -31,7 +31,7 @@ const ProfileText = ({ status, titleId }) => (
       size="l"
     >
       I’m Mayur, currently I live in Pune working as a Application Developer, BA4 at{' '}
-      <Link href="https://www.barclays.com">Barclays</Link>. My projects include Automation frameworks for UI
+      <Link href="https://investmentbank.barclays.com">Barclays</Link>. My projects include Automation frameworks for UI
       - Web, Mobile and Backend. Being comfortable with code allows me to rapidly
       prototype and validate experiences. If you're interested in the tools and software I
       use check out my <Link href="/uses">uses page</Link>.
