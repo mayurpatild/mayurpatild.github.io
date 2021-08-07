@@ -140,7 +140,7 @@ const Home = () => {
 
     return () => {
       clearTimeout(scrollTimeout);
-      if (scrollObserver) {
+      if (scrollObserver) {   
         scrollObserver.disconnect();
       }
     };
