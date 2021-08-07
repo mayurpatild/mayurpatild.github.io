@@ -4,8 +4,8 @@ import { addons } from '@storybook/addons';
 addons.setConfig({
   theme: {
     ...themes.dark,
-    brandImage: 'https://mayurpatild.github.io/parallax/icon.svg',
+    brandImage: 'https://mayurpatild.github.io/icon.svg',
     brandTitle: 'Mayur Patil Components',
-    brandUrl: 'https://mayurpatild.github.io/parallax',
+    brandUrl: 'https://mayurpatild.github.io',
   },
 });

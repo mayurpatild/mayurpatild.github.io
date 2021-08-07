@@ -1,6 +1,6 @@
 {
   "name": "functions",
-  "description": "Serverless functions for mayurpatild.github.io/parallax using AWS lambda",
+  "description": "Serverless functions for mayurpatild.github.io using AWS lambda",
   "scripts": {
     "deploy": "serverless deploy --stage production",
     "deploy:api": "serverless deploy --function api --stage production",
