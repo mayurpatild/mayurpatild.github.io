@@ -10,8 +10,8 @@
     "static/js/3.1e431bb9.chunk.js": "/static/js/3.1e431bb9.chunk.js",
     "static/js/3.1e431bb9.chunk.js.map": "/static/js/3.1e431bb9.chunk.js.map",
     "main.css": "/static/css/main.47ac3972.chunk.css",
-    "main.js": "/static/js/main.bd680084.chunk.js",
-    "main.js.map": "/static/js/main.bd680084.chunk.js.map",
+    "main.js": "/static/js/main.7d5245f9.chunk.js",
+    "main.js.map": "/static/js/main.7d5245f9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.bf878e31.js",
     "runtime-main.js.map": "/static/js/runtime-main.bf878e31.js.map",
     "static/css/6.da871aa2.chunk.css": "/static/css/6.da871aa2.chunk.css",
@@ -77,6 +77,7 @@
     "static/media/dribbble.13d598e9.svg": "/static/media/dribbble.13d598e9.svg",
     "static/media/earth.081bcc3d.glb": "/static/media/earth.081bcc3d.glb",
     "static/media/error.a8860d38.svg": "/static/media/error.a8860d38.svg",
+    "static/media/fb.da91cf07.svg": "/static/media/fb.da91cf07.svg",
     "static/media/figma.a86cd91c.svg": "/static/media/figma.a86cd91c.svg",
     "static/media/gamestack-list-large.89dd2fc9.jpg": "/static/media/gamestack-list-large.89dd2fc9.jpg",
     "static/media/gamestack-list.8f1de0b0.jpg": "/static/media/gamestack-list.8f1de0b0.jpg",
@@ -99,9 +100,11 @@
     "static/media/gps-sidebar-layers.cda96bb9.png": "/static/media/gps-sidebar-layers.cda96bb9.png",
     "static/media/gps-slides-large.5852a489.jpg": "/static/media/gps-slides-large.5852a489.jpg",
     "static/media/gps-slides.5852a489.jpg": "/static/media/gps-slides.5852a489.jpg",
+    "static/media/instagram.464d172a.svg": "/static/media/instagram.464d172a.svg",
     "static/media/iphone-11.dfa3acae.glb": "/static/media/iphone-11.dfa3acae.glb",
     "static/media/katakana-profile.76f0aa2b.svg": "/static/media/katakana-profile.76f0aa2b.svg",
     "static/media/katakana-project.e7f37733.svg": "/static/media/katakana-project.e7f37733.svg",
+    "static/media/linkedin.a4602369.svg": "/static/media/linkedin.a4602369.svg",
     "static/media/macbook-pro.29527f3f.glb": "/static/media/macbook-pro.29527f3f.glb",
     "static/media/menu.85a01f65.svg": "/static/media/menu.85a01f65.svg",
     "static/media/milkyway.8aafe737.hdr": "/static/media/milkyway.8aafe737.hdr",
@@ -193,6 +196,6 @@
     "static/js/runtime-main.bf878e31.js",
     "static/js/7.fd38904b.chunk.js",
     "static/css/main.47ac3972.chunk.css",
-    "static/js/main.bd680084.chunk.js"
+    "static/js/main.7d5245f9.chunk.js"
   ]
 }
