@@ -27,8 +27,8 @@ import obdSidebarLayersPlaceholder from 'assets/obd-sidebar-layers-placeholder.p
 import obdSidebarAnnotations from 'assets/obd-sidebar-annotations.png';
 import obdSidebarAnnotationsLarge from 'assets/obd-sidebar-annotations-large.png';
 import obdSidebarAnnotationsPlaceholder from 'assets/obd-sidebar-annotations-placeholder.png';
-import obdSlides from 'assets/obd-slides.jpg';
-import obdSlidesLarge from 'assets/obd-slides-large.jpg';
+import obdSlides from 'assets/obd-slides.png';
+import obdSlidesLarge from 'assets/obd-slides-large.png';
 import obdSlidesPlaceholder from 'assets/obd-slides-placeholder.jpg';
 import obdBackgroundBar from 'assets/obd-background-bar.jpg';
 import obdBackgroundBarLarge from 'assets/obd-background-bar-large.jpg';
