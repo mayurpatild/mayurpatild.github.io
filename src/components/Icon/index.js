@@ -1,5 +1,8 @@
 import classNames from 'classnames';
 import { ReactComponent as Twitter } from 'assets/icons/twitter.svg';
+import { ReactComponent as Instagram } from 'assets/icons/instagram.svg';
+import { ReactComponent as Facebook } from 'assets/icons/fb.svg';
+import { ReactComponent as Linkedin } from 'assets/icons/linkedin.svg';
 import { ReactComponent as Dribbble } from 'assets/icons/dribbble.svg';
 import { ReactComponent as Github } from 'assets/icons/github.svg';
 import { ReactComponent as Error } from 'assets/icons/error.svg';
@@ -15,6 +18,9 @@ import './index.css';
 
 export const icons = {
   twitter: Twitter,
+  instagram: Instagram,
+  linkedin: Linkedin,
+  fb: Facebook,
   dribbble: Dribbble,
   github: Github,
   error: Error,

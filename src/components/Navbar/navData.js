@@ -21,14 +21,14 @@ export const navLinks = [
 
 export const socialLinks = [
   {
-    label: 'Twitter',
-    url: 'https://twitter.com/mayurpatild',
-    icon: 'twitter',
+    label: 'Linkedin',
+    url: 'https://linkedin.com/in/mayurpatild',
+    icon: 'linkedin',
   },
   {
     label: 'Instagram',
     url: 'https://www.instagram.com/exuberant.mp',
-    icon: 'figma',
+    icon: 'instagram',
   },
   {
     label: 'Github',
