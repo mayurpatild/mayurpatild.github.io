@@ -12,8 +12,8 @@
     "main.css": "/static/css/main.47ac3972.chunk.css",
     "main.js": "/static/js/main.d7ccc95e.chunk.js",
     "main.js.map": "/static/js/main.d7ccc95e.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.2a7e563a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.2a7e563a.js.map",
+    "runtime-main.js": "/static/js/runtime-main.56faad75.js",
+    "runtime-main.js.map": "/static/js/runtime-main.56faad75.js.map",
     "static/css/6.da871aa2.chunk.css": "/static/css/6.da871aa2.chunk.css",
     "static/js/6.5d22a84b.chunk.js": "/static/js/6.5d22a84b.chunk.js",
     "static/js/6.5d22a84b.chunk.js.map": "/static/js/6.5d22a84b.chunk.js.map",
@@ -29,8 +29,8 @@
     "static/js/10.a50e9053.chunk.js": "/static/js/10.a50e9053.chunk.js",
     "static/js/10.a50e9053.chunk.js.map": "/static/js/10.a50e9053.chunk.js.map",
     "static/css/11.5913d17b.chunk.css": "/static/css/11.5913d17b.chunk.css",
-    "static/js/11.ddcdb06e.chunk.js": "/static/js/11.ddcdb06e.chunk.js",
-    "static/js/11.ddcdb06e.chunk.js.map": "/static/js/11.ddcdb06e.chunk.js.map",
+    "static/js/11.389eeb89.chunk.js": "/static/js/11.389eeb89.chunk.js",
+    "static/js/11.389eeb89.chunk.js.map": "/static/js/11.389eeb89.chunk.js.map",
     "static/css/12.4a57793d.chunk.css": "/static/css/12.4a57793d.chunk.css",
     "static/js/12.c4a8df15.chunk.js": "/static/js/12.c4a8df15.chunk.js",
     "static/js/12.c4a8df15.chunk.js.map": "/static/js/12.c4a8df15.chunk.js.map",
@@ -190,7 +190,7 @@
     "static/media/volkihar-slide-3.6156e25e.jpg": "/static/media/volkihar-slide-3.6156e25e.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2a7e563a.js",
+    "static/js/runtime-main.56faad75.js",
     "static/js/7.fd38904b.chunk.js",
     "static/css/main.47ac3972.chunk.css",
     "static/js/main.d7ccc95e.chunk.js"
