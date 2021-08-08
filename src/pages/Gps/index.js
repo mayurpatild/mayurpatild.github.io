@@ -80,12 +80,23 @@ const ProjectGPS = () => {
         <ProjectSection>
           <ProjectSectionColumns centered className="gps__columns">
             <div className="sidebar__images-text">
-              <ProjectSectionHeading>Bringing it together</ProjectSectionHeading>
+              <ProjectSectionHeading>What is OBD-II ?</ProjectSectionHeading>
               <ProjectSectionText>
-                Teachers needed a better way to create collaborative group activities by
-                annotating slides on gps. Before starting this project, a layer could
-                only be annotated by a single user, making it difficult for learners to
-                work together.
+              OBD-II is an enhanced diagnostic monitor, built right into the vehicle. 
+              It's designed to alert the driver when emission levels are greater than 1.5 times the emission 
+              levels for the car as it was originally certified by the EPA (Environmental Protection Agency). 
+              OBD stands for On Board Diagnostics and the II added to the OBD (On Board Diagnostics) name 
+              represents that it is the second generation, the successor to the OBD I system used on EPA-certified 
+              cars starting in 1988. Unlike OBD-I, OBD-II is designed to detect electrical, chemical and mechanical 
+              failures in the vehicle emission control system that might affect the vehicle emission levels. 
+              The OBD-II protocol is rather simple in theory, but in practice manufacturer-specific additions 
+              and omissions from the official specification make communication more difficult. 
+              To communicate with the ECU, OBD-II Parameter IDs (PIDs) are sent, 
+              and the ECU responds with anywhere from one to twenty bytes. 
+              PIDs are grouped into modes which range from Mode 01 to Mode 09. 
+              The mode my project is particularly concerned with is Mode 01, because that mode provides real-time data. 
+              Other modes, such as Mode 03, provide Diagnostic Trouble Codes (DTCs) and general information 
+              like the Vehicle Identification Number.
               </ProjectSectionText>
               <ProjectSectionText>
                 Our solution was to allow users to be invited to a layer, where they can
@@ -113,14 +124,30 @@ const ProjectGPS = () => {
         <ProjectSection light>
           <ProjectSectionContent>
             <ProjectTextRow>
-              <ProjectSectionHeading>Improving the experience</ProjectSectionHeading>
+              <ProjectSectionHeading>Objectives</ProjectSectionHeading>
               <ProjectSectionText>
-                A problem we heard about often form users was that it was difficult to
-                find images they had previously seen or worked on. To solve this we added
-                a new tab that lists all previously annotated slides. In addition, we
-                added the ability to favorite slides, so if users find an interesting
-                slide they want to annotate later, they can easily save it to their
-                account.
+              OBD-II Port is used for On Board Diagnostics of the vehicle. This helps to alert the driver 
+              about the emission control of the vehicle. This port can as well be used to check various 
+              other parameters such as vehicle speed, engine rpm, engine run time, throttle position, 
+              engine coolant temperature, engine coolant level, trouble codes, fuel type etc. 
+              This can help to monitor the mileage and fuel consumption of a common user and can also 
+              be used to monitor the driving habits of a driver as to identify whether he is over-speeding. 
+
+              This feature is very much useful for parents to keep a track of their children's driving habits.
+
+              
+              The RAW data is decoded in order to obtain the actual values of the selected
+              parameters for the vehicle. The Android OBD-II Reader Android Application is 
+              used to display the values logged in real time for the system.
+
+               Objectives: 
+               1) Write a Python program that runs on the Raspberry Pi to establish connection with Bluetooth OBD-II scanner
+                and record various parameters to SD-card.
+               2) Write a Python program that exposes the collected data through an API and displays it on the GUI of the 
+               Raspberry Pi.
+               3) Using Android SDK, develop an android application capable of data logging through the Bluetooth OBD-II scanner.
+               
+               
               </ProjectSectionText>
             </ProjectTextRow>
             <Image
@@ -155,11 +182,29 @@ const ProjectGPS = () => {
             <div className="gps__grid-text">
               <ProjectSectionHeading>Meaningful details</ProjectSectionHeading>
               <ProjectSectionText>
-                Marking and annotating areas on high resolution biomedical images is the
-                core experience of the app, and it was easy to get lost or lose sense of
-                scale when zooming in on details. Adding measurements for the perimeter
-                and area of an annotation both helped to communicate the overall scale of
-                the image and how large the annotated feature is in comparison.
+               OBD-II analytics can be very helpful in monitoring driving habits. Consider a device that allows 
+              parents to monitor their children's driving to teach them about safety and proper driving techniques. 
+              This kind of device would reduce accident rates and create better drivers. 
+
+               Progressive Insurance has a device called Snapshot which analyses driving habits and rewards good driving
+              with up to a 30% discount. This device plugs into the OBD-II port and uses the real-time PIDs to read data, 
+              much like this project.
+
+               OBD-II analytics can also be used for data mining and targeted advertisement. One example of how vehicle 
+              analytics could be used in this manner is automatically advertising repair services when the "check engine"
+              light turns on. Agnik, LLC, a company that specializes in mobile and distributed data mining software, has 
+              a patent on "On board vehicle data mining, social networking, and pattern-based advertisement (US 20110258044 A1])."
+
+               While designing the project, in the Android Application only the 3 parameters (maximum vehicle speed, engine runtime 
+              and maximum engine rpm) were only taken into consideration for data logging else, real time data was acquired and 
+              displayed on the Graphical User Interface of the Android OBD-II Reader Android Application.
+
+               The OBD sensors supported by the vehicle varied from model to model of the vehicles. Unfortunately, the older car 
+              was used for testing initially and did not support reporting fuel level over OBD-II, but in newer cars this 
+              functionality is more prevalent. This kind of analytics would probably benefit consumers the most because it 
+              would allow one to identify what kinds of driving habits minimize fuel consumption. Not only would it save a 
+              few Dollars at the gas station, it would also help to reduce global pollution.
+
               </ProjectSectionText>
             </div>
           </ProjectSectionContent>
