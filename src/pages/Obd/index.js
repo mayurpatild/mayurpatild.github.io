@@ -85,10 +85,14 @@ const ProjectOBD = () => {
               OBD-II is an enhanced diagnostic monitor, built right into the vehicle. 
               It's designed to alert the driver when emission levels are greater than 1.5 times the emission 
               levels for the car as it was originally certified by the EPA (Environmental Protection Agency). 
+              </ProjectSectionText>
+              <ProjectSectionText>
               OBD stands for On Board Diagnostics and the II added to the OBD (On Board Diagnostics) name 
               represents that it is the second generation, the successor to the OBD I system used on EPA-certified 
               cars starting in 1988. Unlike OBD-I, OBD-II is designed to detect electrical, chemical and mechanical 
               failures in the vehicle emission control system that might affect the vehicle emission levels. 
+              </ProjectSectionText>
+              <ProjectSectionText>
               The OBD-II protocol is rather simple in theory, but in practice manufacturer-specific additions 
               and omissions from the official specification make communication more difficult. 
               To communicate with the ECU, OBD-II Parameter IDs (PIDs) are sent, 
@@ -131,24 +135,30 @@ const ProjectOBD = () => {
               other parameters such as vehicle speed, engine rpm, engine run time, throttle position, 
               engine coolant temperature, engine coolant level, trouble codes, fuel type etc. 
               This can help to monitor the mileage and fuel consumption of a common user and can also 
-              be used to monitor the driving habits of a driver as to identify whether he is over-speeding. 
-
+              be used to monitor the driving habits of a driver as to identify whether he is over-speeding.
+              </ProjectSectionText> 
+              <ProjectSectionText>
               This feature is very much useful for parents to keep a track of their children's driving habits.
-
-              
+              </ProjectSectionText>
+              <ProjectSectionText>
               The RAW data is decoded in order to obtain the actual values of the selected
               parameters for the vehicle. The Android OBD-II Reader Android Application is 
               used to display the values logged in real time for the system.
-
+              </ProjectSectionText>
+              <ProjectSectionText>
                Objectives: 
+              </ProjectSectionText>
+              <ProjectSectionText>
                1) Write a Python program that runs on the Raspberry Pi to establish connection with Bluetooth OBD-II scanner
                 and record various parameters to SD-card.
+              </ProjectSectionText>
+              <ProjectSectionText>  
                2) Write a Python program that exposes the collected data through an API and displays it on the GUI of the 
                Raspberry Pi.
+               </ProjectSectionText>
+               <ProjectSectionText>
                3) Using Android SDK, develop an android application capable of data logging through the Bluetooth OBD-II scanner.
-               
-               
-              </ProjectSectionText>
+               </ProjectSectionText>
             </ProjectTextRow>
             <Image
               srcSet={`${obdSlides} 800w, ${obdSlidesLarge} 1440w`}
@@ -185,26 +195,16 @@ const ProjectOBD = () => {
                OBD-II analytics can be very helpful in monitoring driving habits. Consider a device that allows 
               parents to monitor their children's driving to teach them about safety and proper driving techniques. 
               This kind of device would reduce accident rates and create better drivers. 
-
+              </ProjectSectionText>
+              <ProjectSectionText>
                Progressive Insurance has a device called Snapshot which analyses driving habits and rewards good driving
               with up to a 30% discount. This device plugs into the OBD-II port and uses the real-time PIDs to read data, 
               much like this project.
-
-               OBD-II analytics can also be used for data mining and targeted advertisement. One example of how vehicle 
-              analytics could be used in this manner is automatically advertising repair services when the "check engine"
-              light turns on. Agnik, LLC, a company that specializes in mobile and distributed data mining software, has 
-              a patent on "On board vehicle data mining, social networking, and pattern-based advertisement (US 20110258044 A1])."
-
-               While designing the project, in the Android Application only the 3 parameters (maximum vehicle speed, engine runtime 
-              and maximum engine rpm) were only taken into consideration for data logging else, real time data was acquired and 
-              displayed on the Graphical User Interface of the Android OBD-II Reader Android Application.
-
-               The OBD sensors supported by the vehicle varied from model to model of the vehicles. Unfortunately, the older car 
-              was used for testing initially and did not support reporting fuel level over OBD-II, but in newer cars this 
-              functionality is more prevalent. This kind of analytics would probably benefit consumers the most because it 
+              </ProjectSectionText>
+              <ProjectSectionText>
+               Analystics on the OBD sensors reporting fuel level over OBD-II would probably benefit consumers the most because it 
               would allow one to identify what kinds of driving habits minimize fuel consumption. Not only would it save a 
               few Dollars at the gas station, it would also help to reduce global pollution.
-
               </ProjectSectionText>
             </div>
           </ProjectSectionContent>
