@@ -2,7 +2,7 @@
 
 [![Site preview](/public/social-image.png)](https://mayurpatild.github.io)
 
-A design portfolio to showcase a few projects. View the [live site](https://mayurpatild.github.io/) or check out a live version of the [components storybook](https://storybook.mayurpatild.com).
+A design portfolio to showcase a few projects. View the [live site](https://mayurpatild.github.io/).
 
 ## Install & run
 
