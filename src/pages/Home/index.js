@@ -195,8 +195,8 @@ const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Smart sparrow"
-        description="Designing a platform to help consumers analyze and track their vehicle stats and driving dynamics"
+        title="Designing the future of education"
+        description="Designing a platform to help educators build better online courseware"
         buttonText="View Project"
         buttonLink="/projects/smart-sparrow"
         model={{
@@ -243,8 +243,8 @@ const Home = () => {
         sectionRef={projectFour}
         visible={visibleSections.includes(projectFour.current)}
         index={4}
-        title="Slice"
-        description="Slice"
+        title="Biomedical image collaboration"
+        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
         buttonText="View Project"
         buttonLink="/projects/slice"
         model={{

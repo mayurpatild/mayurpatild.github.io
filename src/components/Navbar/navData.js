@@ -27,7 +27,7 @@ export const socialLinks = [
   },
   {
     label: 'Instagram',
-    url: 'https://www.instagram.com/exuberant.mp',
+    url: 'https://instagram.com/exuberant.mp',
     icon: 'instagram',
   },
   {
