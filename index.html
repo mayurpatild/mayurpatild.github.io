@@ -179,6 +179,23 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-.03em;margin:0}
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--ink3);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer a{color:var(--ink2);margin-right:16px}
 
+
+/* living pipeline background */
+#bg{position:fixed;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
+.sec.grey{background:rgba(245,245,247,.82);backdrop-filter:saturate(120%)}
+.card{background:rgba(255,255,255,.92)}
+/* scroll progress (native scroll-driven animation) */
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,var(--blue),var(--violet),var(--pink));transform-origin:0 50%;transform:scaleX(0);z-index:60}
+@supports (animation-timeline: scroll()){.progress{animation:grow linear both;animation-timeline:scroll(root)}@keyframes grow{to{transform:scaleX(1)}}}
+/* native scroll-driven reveals where supported; IntersectionObserver fallback elsewhere */
+@supports (animation-timeline: view()){
+  .rv{opacity:1;transform:none;animation:rise linear both;animation-timeline:view();animation-range:entry 5% entry 45%}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .rv.in{animation:rise linear both;animation-timeline:view();animation-range:entry 5% entry 45%}
+}
+@media (prefers-reduced-motion:reduce){.rv,.rv.in{animation:none!important;opacity:1;transform:none}.progress{animation:none}}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -186,6 +203,8 @@ footer a{color:var(--ink2);margin-right:16px}
 </style>
 </head>
 <body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="progress" aria-hidden="true"></div>
 
 <div class="nav"><div class="wrap">
   <a class="brand" href="#top">Mayur Patil</a>
@@ -397,7 +416,7 @@ test(<span class="s">'report ready'</span>, <span class="k">async</span> ({ grid
     function size(){dpr=Math.min(devicePixelRatio||1,2);W=stage.clientWidth;H=stage.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
     size();window.addEventListener('resize',size);
     // torus knot (p=2,q=3) point cloud with gradient colors
-    var N=3200,P=[],c1=[40,150,255],c2=[140,105,255],c3=[255,80,120];
+    var N=2600,P=[],c1=[40,150,255],c2=[140,105,255],c3=[255,80,120];
     function lerp(a,b,t){return [a[0]+(b[0]-a[0])*t|0,a[1]+(b[1]-a[1])*t|0,a[2]+(b[2]-a[2])*t|0]}
     var p_=2,q_=3,KR=1.6,Kr=.75,tube=.42;
     function curve(t){var w=KR+Kr*Math.cos(q_*t);return [w*Math.cos(p_*t),w*Math.sin(p_*t),Kr*Math.sin(q_*t)]}
@@ -480,6 +499,63 @@ test(<span class="s">'report ready'</span>, <span class="k">async</span> ({ grid
       setTimeout(function(){bot.innerHTML=html},1400);
     },{threshold:.5}).observe(chat);
   })();
+
+
+  /* ---------- living pipeline background ---------- */
+  (function(){
+    var cv=document.getElementById('bg');if(!cv){return}
+    var ctx=cv.getContext('2d'),W,H,dpr,nodes=[],edges=[],pulses=[],mouse={x:-1e9,y:-1e9},formed=0,target=0;
+    var COL=['10,132,255','124,92,255','255,55,95','48,209,88'];
+    function size(){dpr=Math.min(devicePixelRatio||1,1.5);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);seed()}
+    function seed(){
+      var n=Math.round(Math.min(90,Math.max(40,W*H/22000)));nodes=[];
+      for(var i=0;i<n;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:1.2+Math.random()*1.6,g:i%4,ph:Math.random()*6.28});
+    }
+    size();addEventListener('resize',size);
+    if(fine){addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY},{passive:true});addEventListener('mouseleave',function(){mouse.x=mouse.y=-1e9})}
+    // when the Work section is on screen, nodes gather into four columns: repo → agent → tests → evidence
+    var work=document.getElementById('work');
+    if(work){new IntersectionObserver(function(e){target=e[0].isIntersecting?1:0},{threshold:.25}).observe(work)}
+    var visible=true;document.addEventListener('visibilitychange',function(){visible=!document.hidden});
+    function rebuildEdges(){
+      edges=[];var R=Math.min(170,W*.14);
+      for(var i=0;i<nodes.length;i++)for(var j=i+1;j<nodes.length;j++){var a=nodes[i],b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=dx*dx+dy*dy;if(d<R*R)edges.push([i,j,1-Math.sqrt(d)/R])}
+    }
+    var frame=0,last=performance.now();
+    function tick(now){
+      requestAnimationFrame(tick);if(!visible||reduce&&frame>1){return}
+      var dt=Math.min(32,now-last)/16.7;last=now;frame++;
+      formed+=(target-formed)*.03;
+      var cols=[W*.2,W*.4,W*.6,W*.8],cy=H*.55;
+      for(var i=0;i<nodes.length;i++){var n=nodes[i];
+        n.x+=n.vx*dt;n.y+=n.vy*dt;n.ph+=.004*dt;
+        n.vx+=Math.sin(n.ph)*.004;n.vy+=Math.cos(n.ph*1.3)*.004;
+        if(formed>.01){var tx=cols[n.g]+Math.sin(n.ph*3+i)*28,ty=cy+((i*37)%160-80);n.vx+=(tx-n.x)*.0025*formed;n.vy+=(ty-n.y)*.0025*formed}
+        var mx=mouse.x-n.x,my=mouse.y-n.y,md=mx*mx+my*my;if(md<200*200&&md>1){var f=(1-Math.sqrt(md)/200)*.02;n.vx+=mx*f*.02;n.vy+=my*f*.02}
+        n.vx*=.985;n.vy*=.985;
+        if(n.x<-20)n.x=W+20;if(n.x>W+20)n.x=-20;if(n.y<-20)n.y=H+20;if(n.y>H+20)n.y=-20;
+      }
+      if(frame%6===0)rebuildEdges();
+      if(edges.length&&pulses.length<14&&Math.random()<.12){var e=edges[Math.random()*edges.length|0];pulses.push({e:e,t:0,c:COL[Math.random()*4|0],s:.008+Math.random()*.01})}
+      ctx.clearRect(0,0,W,H);
+      ctx.lineWidth=1;
+      for(var k=0;k<edges.length;k++){var ed=edges[k],a=nodes[ed[0]],b=nodes[ed[1]];ctx.strokeStyle='rgba(29,29,31,'+(ed[2]*.13).toFixed(3)+')';ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}
+      for(var p=pulses.length-1;p>=0;p--){var pl=pulses[p];pl.t+=pl.s*dt;if(pl.t>=1){pulses.splice(p,1);continue}
+        var a2=nodes[pl.e[0]],b2=nodes[pl.e[1]],px=a2.x+(b2.x-a2.x)*pl.t,py=a2.y+(b2.y-a2.y)*pl.t,al=Math.sin(pl.t*Math.PI);
+        ctx.fillStyle='rgba('+pl.c+','+(al*.9).toFixed(2)+')';ctx.beginPath();ctx.arc(px,py,2.2,0,6.283);ctx.fill();
+        ctx.fillStyle='rgba('+pl.c+','+(al*.18).toFixed(2)+')';ctx.beginPath();ctx.arc(px,py,7,0,6.283);ctx.fill()}
+      for(var q=0;q<nodes.length;q++){var nd=nodes[q];ctx.fillStyle='rgba(29,29,31,'+(0.16+formed*.12).toFixed(2)+')';ctx.beginPath();ctx.arc(nd.x,nd.y,nd.r,0,6.283);ctx.fill()}
+    }
+    requestAnimationFrame(tick);
+  })();
+
+  /* ---------- smooth scroll (Lenis), optional ---------- */
+  if(!reduce&&fine){
+    var sc=document.createElement('script');sc.src='https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js';
+    sc.onload=function(){try{var lenis=new Lenis({lerp:.1,smoothWheel:true});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+      document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var el=document.querySelector(a.getAttribute('href'));if(el){e.preventDefault();lenis.scrollTo(el,{offset:-60})}})})}catch(e){}};
+    document.head.appendChild(sc); // if the CDN fails, native scrolling stays
+  }
 
   // reveal on scroll, once
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -10% 0px',threshold:.12});
