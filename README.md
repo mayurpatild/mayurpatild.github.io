@@ -1,25 +1,9 @@
-# Personal portfolio
+# mayurpatild.github.io
 
-[![Site preview](/public/social-image.png)](https://mayurpatild.github.io)
+Personal site: https://mayurpatild.github.io
 
-A design portfolio to showcase a few projects. View the [live site](https://mayurpatild.github.io/).
+One HTML file, no build step. The 3D hero is a software-projected point cloud on a plain canvas (no Three.js), so there is nothing to install and nothing to break. Deployed from the repository root by GitHub Pages.
 
-## Install & run
-
-Make sure you have nodejs and npm installed. Install dependencies with:
-
-```bash
-npm install
-```
-
-Once it's done start up a local server with:
-
-```bash
-npm start
-```
-
-To create a production build:
-
-```bash
-npm run build
-```
+- `index.html` — the whole site
+- `Mayur_Patil_Resume.pdf` — linked from the Download button
+- `.nojekyll` — tells Pages to serve files as-is
